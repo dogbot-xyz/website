@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.solid:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -24,4 +26,18 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.logo.solid {
+  width: 200px;
+  /* or whatever size you prefer */
+  height: auto;
+  /* maintain aspect ratio */
+}
+
+body {
+  background-color: black;
+  /* Set the background to black */
+  color: white;
+  /* Set text color to white for better readability */
 }
