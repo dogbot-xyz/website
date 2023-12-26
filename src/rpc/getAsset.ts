@@ -17,7 +17,7 @@ const getAsset = async () => {
             id: 'my-id',
             method: 'getAsset',
             params: {
-                id: '7iT1GRYYhEop2nV1dyCwK2MGyLmPHq47WhPGSwiqcUg5',
+                id: 'J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn',
                 displayOptions: {
                     showFungible: true // Return details about a fungible token
                 }
