@@ -108,31 +108,37 @@ npm run build:env
 
 ## Important Files & Folders
 
-Project Structure Overview
-Important Files & Folders
-📁 ./node_modules Contains third-party dependencies added to your project.
-📁 ./public Holds publicly-available assets such as images, styles, fonts, etc. Read more about using static assets in this directory.
-📁 ./src Main directory for your SolidStart application code. It is aliased to ~/ for easy importing in your code.
-📁 ./src/routes Contains file routes/pages for your application. Learn more about routing in SolidStart.
-📄 ./src/entry-client.tsx Loads and hydrates the JavaScript for your application on the client side (in the browser). In most cases, you won't need to modify this file.
-📄 ./src/entry-server.tsx Handles requests on the server. In many cases, you won't need to modify this file.
-📄 ./src/app.tsx The HTML root of your application for both client and server rendering. This file serves as the shell inside which your application is rendered.
-Project Structure Details
-./node_modules/: This directory contains third-party dependencies. You typically don't need to modify or interact with this folder directly.
+# Project Structure
 
-./public/: Assets in this directory are publicly available. It's the place to store images, styles, fonts, etc. When using images, consider importing them in the <script> rather than placing them directly in ./public whenever possible.
+## Important Files & Folders
 
-./src/: The main source code directory for your SolidStart application. The ~/ alias is used to import files from this directory easily.
+|                             |                                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 📁 `./node_modules`         | Contains third-party dependencies added to your project.                                                                                         |
+| 📁 `./public`               | Holds publicly-available assets such as images, styles, fonts, etc. Read more about using static assets in this directory.                       |
+| 📁 `./src`                  | Main directory for your SolidStart application code. It is aliased to `~/` for easy importing in your code.                                      |
+| 📁 `./src/routes`           | Contains file routes/pages for your application. Learn more about routing in SolidStart.                                                         |
+| 📄 `./src/entry-client.tsx` | Loads and hydrates the JavaScript for your application on the client side (in the browser). In most cases, you won't need to modify this file.   |
+| 📄 `./src/entry-server.tsx` | Handles requests on the server. In many cases, you won't need to modify this file.                                                               |
+| 📄 `./src/app.tsx`          | The HTML root of your application for both client and server rendering. This file serves as the shell inside which your application is rendered. |
 
-./src/routes/: Contains file routes/pages for your application. Learn more about routing in SolidStart. Each file in this directory becomes a page or an endpoint based on the folder structure.
+## Project Structure Details
 
-./src/entry-client.tsx: This file loads and hydrates the JavaScript for your application on the client side (in the browser). In most cases, you won't need to modify this file.
+- **`./node_modules/`**: This directory contains third-party dependencies. You typically don't need to modify or interact with this folder directly.
 
-./src/entry-server.tsx: Handles requests on the server. In many cases, you won't need to modify this file.
+- **`./public/`**: Assets in this directory are publicly available. It's the place to store images, styles, fonts, etc. When using images, consider importing them in the `<script>` rather than placing them directly in `./public` whenever possible.
 
-./src/app.tsx: The HTML root of your application for both client and server rendering. This file serves as the shell inside which your application is rendered.
+- **`./src/`**: The main source code directory for your SolidStart application. The `~/` alias is used to import files from this directory easily.
 
-This structure provides a foundation for building SolidStart applications, emphasizing simplicity and scalability. You can focus on the ./src directory for most of your development work, and the other files and folders play specific roles in the build and execution process.
+  - **`./src/routes/`**: Contains file routes/pages for your application. Learn more about routing in SolidStart. Each file in this directory becomes a page or an endpoint based on the folder structure.
+
+  - **`./src/entry-client.tsx`**: This file loads and hydrates the JavaScript for your application on the client side (in the browser). In most cases, you won't need to modify this file.
+
+  - **`./src/entry-server.tsx`**: Handles requests on the server. In many cases, you won't need to modify this file.
+
+  - **`./src/app.tsx`**: The HTML root of your application for both client and server rendering. This file serves as the shell inside which your application is rendered.
+
+This structure provides a foundation for building SolidStart applications, emphasizing simplicity and scalability. You can focus on the `./src` directory for most of your development work, and the other files and folders play specific roles in the build and execution process.
 
 ## Vercel Config
 
