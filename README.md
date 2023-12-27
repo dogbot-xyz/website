@@ -176,18 +176,6 @@ See list of available icons in `$lib/config`.
 
 - `TODO`
 
-## Important Files & Folders
-
-|                                         |                                                                                                                                                                      |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 📄`./src/lib/parser/index.ts`           | UI calls the function in this file to parse transactions                                                                                                             |
-| 📄`./src/lib/parser/types.ts`           | Contains the types, interfaces, and enums needed to understand to work on the parser.                                                                                |
-| 📁`./src/lib/parser/parsers`            | Contains all parser methods.                                                                                                                                         |
-| 📄`./src/lib/parser/parsers/index.ts`   | Exports parser files in `./src/parsers`.                                                                                                                             |
-| 📄`./src/lib/parser/parsers/unknown.ts` | If there is no dedicated parser file for a Helius transaction type, they are parsed in this file. Changing the label on the UI is in `./apps/web/src/lib/config.ts`. |
-| 📁`./src/lib/parser/utils`              | Utility functions for the parser functions                                                                                                                           |
-| 📄`./src/lib/search.ts`                 | The function that resolves search inputs to a URL parameter.                                                                                                         |
-
 # 📦 @dogbot-xyz/website-database [WIP]
 
 A database for saving metadata like transaction views or user details.
