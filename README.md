@@ -2,7 +2,7 @@
 
 - Fork website onto your own GitHub
 - Clone it and make sure you're on the `dev` branch.
-- Create a new branch named `[initials]/[feature]` off of `dev`. Example `q/added-a-cool-thing`.
+- Create a new branch named `[feature|bug]/[name]]` off of `dev`. Example `feature/added-a-cool-thing`.
 
 ### Create PR
 
