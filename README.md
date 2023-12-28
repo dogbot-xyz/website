@@ -103,7 +103,7 @@ npm run build:env
 
 | Environment | Description                                               | Directory                        |
 | ----------- | --------------------------------------------------------- | -------------------------------- |
-| Production  | The main deployment attached to the domain. `vercel/prod` | https://dogbot.xyz/xyz/          |
+| Production  | The main deployment attached to the domain. `vercel/prod` | https://dogbot.xyz/              |
 | Staging     | Staging branch based on contents of `vercel/staging`      | https://dogbot-eight.vercel.app/ |
 
 ## Important Files & Folders
