@@ -49,6 +49,7 @@ Run the install command from the root of the project to install dependencies for
 
 ```
 npm install
+
 ```
 
 ### Dev
@@ -73,6 +74,12 @@ Formats files based on the Prettier and ESlint settings.
 
 ```sh
 npm run format
+```
+
+### Audit
+
+```sh
+npm audit fix
 ```
 
 ### Test
@@ -179,3 +186,7 @@ See list of available icons in `$lib/config`.
 # 📦 @dogbot-xyz/website-database [WIP]
 
 A database for saving metadata like transaction views or user details.
+
+```
+
+```
