@@ -1,21 +1,17 @@
 {
   "name": "website",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "node ./.output/server/index.mjs"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@solidjs/router": "^0.10.5",
-    "@solidjs/start": "^0.4.2",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.26",
-    "solid-js": "^1.8.7",
-    "tailwindcss": "^3.3.3",
-    "vinxi": "0.0.54"
-  },
-  "engines": {
-    "node": ">=18"
+    "@astrojs/check": "^0.3.4",
+    "astro": "^4.0.8",
+    "typescript": "^5.3.3"
   }
 }
