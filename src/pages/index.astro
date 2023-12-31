@@ -1,5 +1,6 @@
 ---
 import Counter from "../components/counter.tsx";
+import dogImage from "../images/dog.png";
 ---
 
 <html>
@@ -15,15 +16,32 @@ import Counter from "../components/counter.tsx";
       }
       body {
         padding: 1rem;
+        background-color: black;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .logo {
+        width: 200px;
       }
     </style>
   </head>
   <body>
     <main>
-      <Counter client:visible>
-        <h1>Dog Bot!!</h1>
-        <a href="/about">about</a>
-      </Counter>
+      <div>
+        <a
+          href="https://xray.helius.xyz/account/HexkqtFMmBJXUHco9KoXKocQcLSgfCf2Hdz1Qa3jcSEA/tokens?network=mainnet"
+          target="_blank"
+        >
+          <img src={dogImage.src} class="logo solid" alt="Dog image" />
+        </a>
+      </div>
+      <h1>DOGBOT</h1>
+      <Counter client:visible />
     </main>
   </body>
 </html>
