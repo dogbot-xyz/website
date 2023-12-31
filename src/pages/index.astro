@@ -1,0 +1,53 @@
+---
+import Counter from "../components/counter.tsx";
+import dogImage from "../images/dog.png";
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <style>
+      html,
+      body {
+        font-family: Menlo;
+        margin: 0;
+      }
+      body {
+        padding: 1rem;
+        background-color: black;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .logo {
+        width: 200px;
+      }
+      .navButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/about" class="navButton">About</a>
+    <main>
+      <div>
+        <a
+          href="https://solana.fm/address/HexkqtFMmBJXUHco9KoXKocQcLSgfCf2Hdz1Qa3jcSEA/transactions?cluster=mainnet-alpha"
+          target="_blank"
+        >
+          <img src={dogImage.src} class="logo solid" alt="Dog image" />
+        </a>
+      </div>
+      <h1>DOGBOT</h1>
+      <Counter client:visible />
+    </main>
+  </body>
+</html>
