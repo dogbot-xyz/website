@@ -1,7 +1,29 @@
 ---
-import Nav from "../components/nav.tsx";
+import Counter from "../components/counter.tsx";
 ---
 
-<h1>dogbot</h1>
-<Nav />
-<a href="/about">about</a>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <style>
+      html,
+      body {
+        font-family: Menlo;
+        margin: 0;
+      }
+      body {
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <Counter client:visible>
+        <h1>Dog Bot!!</h1>
+        <a href="/about">about</a>
+      </Counter>
+    </main>
+  </body>
+</html>
