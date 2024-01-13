@@ -28,15 +28,25 @@ import dogImage from "../images/dog.png";
       .logo {
         width: 200px;
       }
-      .navButton {
+      .navContainer {
         position: absolute;
         top: 10px;
         left: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .navButton {
+        /* Styles for individual navigation buttons */
       }
     </style>
   </head>
   <body>
-    <a href="/about" class="navButton">About</a>
+    <!-- Navigation container with flexbox for inline layout -->
+    <div class="navContainer">
+      <a href="/about" class="navButton">About</a>
+      <a href="/assets" class="navButton">Assets</a>
+    </div>
+
     <main>
       <div>
         <a
