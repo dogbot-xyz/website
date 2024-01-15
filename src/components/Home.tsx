@@ -8,16 +8,16 @@ interface IHomeProps {
 function Home(props: IHomeProps) {
   return (
     <Show
-      when={props.isLoggedin}
+      when={props.isLoggedIn}
       fallback={
         <>
           <div>Welcome to the application. Please sign in to continue.</div>
-          <SignInForm />
+          {/* <SignInForm /> */}
         </>
       }
     >
       <div>Welcome back, {props.firstName}!</div>
-      <Dashboard />
+      {/* <Dashboard /> */}
     </Show>
   );
 }

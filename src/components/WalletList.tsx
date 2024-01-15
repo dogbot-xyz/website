@@ -1,5 +1,5 @@
-import { For } from "solid-js";
-import { Wallet } from "../App";
+import { For } from 'solid-js';
+import { Wallet } from '../App';
 
 interface WalletListProps {
   wallets: Wallet[];
@@ -7,7 +7,7 @@ interface WalletListProps {
 
 export function WalletList(props: WalletListProps) {
   const totalWallets = () => props.wallets.length;
-  
+
   return (
     <>
       <h2>My Wallets ({totalWallets()})</h2>
@@ -17,7 +17,10 @@ export function WalletList(props: WalletListProps) {
             return (
               <li>
                 {wallet.title}
-                <span style={{ "font-style": "italic" }}> ({wallet.address})</span>
+                <span style={{ 'font-style': 'italic' }}>
+                  {' '}
+                  ({wallet.address})
+                </span>
               </li>
             );
           }}

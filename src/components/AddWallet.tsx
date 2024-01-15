@@ -41,7 +41,7 @@ export function AddWallet(props: AddWalletProps) {
         />
       </div>
       <button type="submit" onClick={addWallet}>
-        Add book
+        Add Wallet
       </button>
     </form>
   );
