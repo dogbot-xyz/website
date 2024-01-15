@@ -54,6 +54,6 @@ const getAssetsWithNativeBalance = async () => {
     )
     .map((item: AssetItem) => item.id);
   console.log(fungibleAssetIds);
-  console.log(result.nativeBalance); // 1479920100
+  console.log(result.nativeBalance.lamports); // 1479920100
 };
 getAssetsWithNativeBalance();
