@@ -17,6 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "dotenv": "^16.3.1",
+    "helius-sdk": "^1.2.2",
     "solid-js": "^1.8.7"
   },
   "devDependencies": {
