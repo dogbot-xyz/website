@@ -1,28 +1,42 @@
-import { createSignal } from 'solid-js';
 import './App.css';
-import dogImage from './assets/dog.png';
+import { createSignal } from "solid-js";
+import { AddWallet } from "./components/AddWallet";
+import { DogBot } from "./components/DogBot";
+import { WalletList } from "./components/WalletList";
+
+export type Wallet = {
+  title: string;
+  address: string;
+};
+
+const initialWallets: Wallet[] = [
+  { title: "trader-joe", address: "HexkqtFMmBJXUHco9KoXKocQcLSgfCf2Hdz1Qa3jcSEA" },
+  { title: "karolek", address: "4xGXnb561iCe15GcqBUUeUPySxMR1RpNwdotF7vE2qzu" },
+
+];
+
+
+interface BookshelfProps {
+  name: string;
+}
+
+function Bookshelf(props: BookshelfProps) {
+  const [wallets, setWallets] = createSignal(initialWallets);
+  return (
+    <div>
+      <DogBot />
+      <h1>{props.name}</h1>
+      <WalletList wallets={wallets()}/>
+      <AddWallet setWallets={setWallets}/>
+    </div>
+  );
+}
 
 function App() {
-  const [count, setCount] = createSignal(0);
-
   return (
-    <>
-      <div>
-        <a href="https://solana.fm/address/HexkqtFMmBJXUHco9KoXKocQcLSgfCf2Hdz1Qa3jcSEA/transactions?cluster=mainnet-alpha" target="_blank">
-          <img src={dogImage} class="logo solid" alt="Dog image" style={{ width: '200px' }} />
-        </a>
-      </div>
-      <h1>DOGBOT</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-      </div>
-      <p class="read-the-docs">
-        site in progress
-      </p>
-    </>
+    <Bookshelf name="DOGBOT"/>
   );
+
 }
 
 export default App;
