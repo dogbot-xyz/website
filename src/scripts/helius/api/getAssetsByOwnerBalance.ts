@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const url = `https://mainnet.helius-rpc.com/?api-key=${process.env.VITE_API_KEY}`;
+const url = `https://mainnet.helius-rpc.com/?api-key=${process.env.HELIUS_API_KEY}`;
 
 const getAssetsWithNativeBalance = async () => {
   const response = await fetch(url, {

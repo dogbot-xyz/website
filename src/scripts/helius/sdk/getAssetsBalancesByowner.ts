@@ -9,7 +9,6 @@ const getAssetsByOwner = async (ownerAddress: string) => {
     const response = await helius.rpc.getAssetsByOwner({
       ownerAddress: ownerAddress,
       limit: 10,
-
       displayOptions: {
         showUnverifiedCollections: false,
         showCollectionMetadata: false,
@@ -17,6 +16,7 @@ const getAssetsByOwner = async (ownerAddress: string) => {
       },
       page: 1,
     });
+
     console.log(response.items);
   } catch (error) {
     // Log the error
