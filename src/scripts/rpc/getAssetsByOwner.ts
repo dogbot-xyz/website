@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 
-// Configure dotenv to load the .env file
 dotenv.config();
 
 const url = `https://mainnet.helius-rpc.com/?api-key=${process.env.VITE_API_KEY}`;

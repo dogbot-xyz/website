@@ -14,6 +14,10 @@ const initialWallets: Wallet[] = [
     title: 'trader-joe',
     address: 'HexkqtFMmBJXUHco9KoXKocQcLSgfCf2Hdz1Qa3jcSEA',
   },
+  {
+    title: 'toly.sol',
+    address: '86xCnPeV69n6t3DnyGvkKobf9FdN2H9oiVDdaMpo2MMY',
+  },
   { title: 'karolek', address: '4xGXnb561iCe15GcqBUUeUPySxMR1RpNwdotF7vE2qzu' },
 ];
 
