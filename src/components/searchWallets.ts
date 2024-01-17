@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-interface Assets {
+export interface Assets {
   assets: TokenInfo[];
   total_price_usd: number;
 }

@@ -41,3 +41,29 @@ body {
   color: white;
   /* Set text color to white for better readability */
 }
+
+
+li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; /* Adjust size as needed */
+}
+
+.wallet-title:hover {
+  cursor: pointer;
+  /* Add your desired hover styles here, e.g., color change, text decoration, etc. */
+  color: #007bff; /* Example: Change color on hover */
+  text-decoration: underline;
+}
+
+/* Adjust the layout to move everything towards the top */
+body, html {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* If you have a specific container or wrapper, adjust its top margin/padding as well */
+.your-main-container-class {
+  margin-top: 0; /* Adjust as needed */
+}

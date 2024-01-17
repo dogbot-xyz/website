@@ -1,31 +1,17 @@
-import { For } from 'solid-js';
+// import { For } from 'solid-js';
 import { Wallet } from '../App';
 
 interface WalletListProps {
   wallets: Wallet[];
+  onSearchButtonClick: (address: string) => void; // Function prop
 }
 
-export function WalletList(props: WalletListProps) {
-  const totalWallets = () => props.wallets.length;
-
+export const WalletList = (props: WalletListProps) => {
   return (
-    <>
-      <h2>My Wallets ({totalWallets()})</h2>
-      <ul>
-        <For each={props.wallets}>
-          {(wallet) => {
-            return (
-              <li>
-                {wallet.title}
-                <span style={{ 'font-style': 'italic' }}>
-                  {' '}
-                  ({wallet.address})
-                </span>
-              </li>
-            );
-          }}
-        </For>
-      </ul>
-    </>
+    <ul>
+      {props.wallets.map((wallet) => (
+        <li class="wallet-title">{wallet.title}</li>
+      ))}
+    </ul>
   );
-}
+};
