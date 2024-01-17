@@ -1,7 +1,3 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 export interface Assets {
   assets: TokenInfo[];
   total_price_usd: number;
@@ -52,7 +48,8 @@ export async function searchWallets(ownerAddress: string): Promise<Assets> {
     return { assets: [], total_price_usd: 0 };
   }
 
-  const url = `https://mainnet.helius-rpc.com/?api-key=${process.env.HELIUS_API_KEY}`;
+  const apiKey = import.meta.env.VITE_HELIOUS_API_KEY;
+  const url = `https://mainnet.helius-rpc.com/?api-key=${apiKey}`;
 
   try {
     const response = await fetch(url, {
