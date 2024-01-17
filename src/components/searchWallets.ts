@@ -95,12 +95,12 @@ export async function searchWallets(ownerAddress: string): Promise<Assets> {
       0
     );
 
+    console.log('assets', assets);
+    console.log('total_price_usd', total_price_usd);
+
     return { assets, total_price_usd };
   } catch (error) {
     console.error('Error fetching wallet data:', error);
     throw error;
   }
 }
-
-// Example usage
-searchWallets('4xGXnb561iCe15GcqBUUeUPySxMR1RpNwdotF7vE2qzu');

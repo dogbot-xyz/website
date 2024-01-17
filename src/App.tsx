@@ -5,11 +5,6 @@ import { DogBot } from './components/DogBot';
 import { WalletList } from './components/WalletList';
 import { Assets, searchWallets } from './components/searchWallets';
 
-export type Wallet = {
-  title: string;
-  address: string;
-};
-
 const initialWallets: Wallet[] = [
   {
     title: 'trader-joe',
@@ -22,21 +17,28 @@ const initialWallets: Wallet[] = [
   { title: 'karolek', address: '4xGXnb561iCe15GcqBUUeUPySxMR1RpNwdotF7vE2qzu' },
 ];
 
+const [wallets, setWallets] = createSignal(initialWallets);
+const [showForm, setShowForm] = createSignal(false);
+
+const toggleForm = () => setShowForm(!showForm());
+
+const [assets, setAssets] = createSignal<Assets | null>(null);
+
+export type Wallet = {
+  title: string;
+  address: string;
+};
+
 interface WalletShelfProps {
   name: string;
 }
 
 function WalletShelf(props: WalletShelfProps) {
-  const [wallets, setWallets] = createSignal(initialWallets);
-  const [showForm, setShowForm] = createSignal(false);
-
-  const toggleForm = () => setShowForm(!showForm());
-
-  const [assets, setAssets] = createSignal<Assets | null>(null);
-
   const handleSearchButtonClick = async (address: string) => {
+    console.log('Searching for address:', address);
     try {
       const results = await searchWallets(address);
+      console.log('Search results:', results);
       setAssets(results); // Store the results in the 'assets' signal
     } catch (error) {
       console.error('Error fetching assets', error);
