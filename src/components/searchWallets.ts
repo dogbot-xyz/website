@@ -2,6 +2,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+interface Assets {
+  assets: TokenInfo[];
+  total_price_usd: number;
+}
+
 interface GenericObject {
   [key: string]: unknown; // Represents a generic object with string keys and unknown value types
 }
@@ -41,48 +46,63 @@ interface AssetItem {
 }
 
 // Function to search for wallet information using the ownerAddress
-export async function searchWallets(ownerAddress: string) {
-  if (ownerAddress.trim() === '') return [];
+
+export async function searchWallets(ownerAddress: string): Promise<Assets> {
+  if (ownerAddress.trim() === '') {
+    return { assets: [], total_price_usd: 0 };
+  }
 
   const url = `https://mainnet.helius-rpc.com/?api-key=${process.env.HELIUS_API_KEY}`;
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      jsonrpc: '2.0',
-      id: 'my-id',
-      method: 'getAssetsByOwner',
-      params: {
-        ownerAddress: ownerAddress,
-        displayOptions: {
-          showFungible: true,
-          showNativeBalance: true,
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 'my-id',
+        method: 'getAssetsByOwner',
+        params: {
+          ownerAddress: ownerAddress,
+          displayOptions: {
+            showFungible: true,
+            showNativeBalance: true,
+          },
         },
-      },
-    }),
-  });
+      }),
+    });
 
-  const { result } = await response.json();
-  const assets = result.items
-    .filter(
-      (item: AssetItem) =>
-        item.interface === 'FungibleToken' || item.interface === 'FungibleAsset'
-    )
-    .map((item: AssetItem) => ({
-      token_info: {
-        symbol: item.token_info?.symbol,
-        balance: item.token_info?.balance,
-        price_per_token: item.token_info?.price_info?.price_per_token,
-        total_price: item.token_info?.price_info?.total_price,
-        currency: item.token_info?.price_info?.currency,
-      },
-      interface: item.interface,
-    }));
-  console.log(assets);
-  return assets;
+    const data = await response.json();
+
+    if (!data.result || !data.result.items) {
+      throw new Error('Invalid response structure');
+    }
+
+    const assets = data.result.items
+      .filter(
+        (item: AssetItem) =>
+          item.interface === 'FungibleToken' ||
+          item.interface === 'FungibleAsset'
+      )
+      .map((item: AssetItem) => item.token_info)
+      .filter(
+        (tokenInfo: TokenInfo | undefined): tokenInfo is TokenInfo =>
+          !!tokenInfo
+      );
+
+    const total_price_usd = assets.reduce(
+      (sum: number, asset: TokenInfo) =>
+        sum + (asset.price_info ? asset.price_info.total_price : 0),
+      0
+    );
+
+    return { assets, total_price_usd };
+  } catch (error) {
+    console.error('Error fetching wallet data:', error);
+    throw error;
+  }
 }
 
 // Example usage

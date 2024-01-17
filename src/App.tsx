@@ -3,6 +3,7 @@ import { createSignal, Show } from 'solid-js';
 import { AddWallet } from './components/AddWallet';
 import { DogBot } from './components/DogBot';
 import { WalletList } from './components/WalletList';
+// import { Assets } from './components/searchWallets';
 
 export type Wallet = {
   title: string;
