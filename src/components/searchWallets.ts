@@ -7,7 +7,7 @@ interface GenericObject {
   [key: string]: unknown; // Represents a generic object with string keys and unknown value types
 }
 
-interface TokenInfo {
+export interface TokenInfo {
   symbol: string;
   balance: number;
   supply: number;
@@ -17,14 +17,14 @@ interface TokenInfo {
   price_info: PriceInfo; // Replace 'unknown' with a more specific type if known
 }
 
-interface PriceInfo {
+export interface PriceInfo {
   price_per_token: number;
   total_price: number;
   currency: string;
 }
 
 // Define a TypeScript interface for the asset items
-interface AssetItem {
+export interface AssetItem {
   interface: 'V1_NFT' | 'FungibleToken' | 'FungibleAsset';
   id: string;
   content: GenericObject; // Replace GenericObject with a more specific type if known
@@ -95,8 +95,8 @@ export async function searchWallets(ownerAddress: string): Promise<Assets> {
       0
     );
 
-    console.log('assets', assets);
-    console.log('total_price_usd', total_price_usd);
+    // console.log('assets', assets);
+    // console.log('total_price_usd', total_price_usd);
 
     return { assets, total_price_usd };
   } catch (error) {

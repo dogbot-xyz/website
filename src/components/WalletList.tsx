@@ -10,10 +10,12 @@ export const WalletList = (props: WalletListProps) => {
     <ul>
       {props.wallets.map((wallet) => (
         <li class="wallet-title">
-          {wallet.title}
-          <button onClick={() => props.onSearchButtonClick(wallet.address)}>
-            Search
-          </button>
+          <span
+            onClick={() => props.onSearchButtonClick(wallet.address)}
+            style={{ cursor: 'pointer' }}
+          >
+            {wallet.title}
+          </span>
         </li>
       ))}
     </ul>

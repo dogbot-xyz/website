@@ -1,9 +1,9 @@
 import './App.css';
-import { createSignal, Show } from 'solid-js';
+import { createSignal, Show, For } from 'solid-js';
 import { AddWallet } from './components/AddWallet';
 import { DogBot } from './components/DogBot';
 import { WalletList } from './components/WalletList';
-import { Assets, searchWallets } from './components/searchWallets';
+import { Assets, searchWallets, TokenInfo } from './components/searchWallets';
 
 const initialWallets: Wallet[] = [
   {
@@ -63,18 +63,38 @@ function WalletShelf(props: WalletShelfProps) {
       </Show>
       <Show when={assets()}>
         <div>
-          {(() => {
-            const currentAssets = assets();
-            if (!currentAssets) return null; // Guard clause
-
-            // Now it's safe to use currentAssets
-            return (
-              <div>
-                <p>Total Price USD: {currentAssets.total_price_usd}</p>
-                {/* More rendering based on the structure of your Assets */}
-              </div>
-            );
-          })()}
+          <p>Total Price USD: {assets()?.total_price_usd.toFixed(2)}</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Balance</th>
+                <th>Price per Token</th>
+                <th>Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <For
+                each={assets()?.assets}
+                fallback={
+                  <tr>
+                    <td>Loading...</td>
+                  </tr>
+                }
+              >
+                {(asset: TokenInfo) =>
+                  asset.symbol && asset.price_info?.price_per_token ? (
+                    <tr>
+                      <td>{asset.symbol}</td>
+                      <td>{asset.balance}</td>
+                      <td>{asset.price_info.price_per_token}</td>
+                      <td>{asset.price_info.total_price.toFixed(2)}</td>
+                    </tr>
+                  ) : null
+                }
+              </For>
+            </tbody>
+          </table>
         </div>
       </Show>
     </div>
