@@ -6,6 +6,22 @@ interface GenericObject {
   [key: string]: unknown; // Represents a generic object with string keys and unknown value types
 }
 
+interface TokenInfo {
+  symbol: string;
+  balance: number;
+  supply: number;
+  decimals: number;
+  token_program: string;
+  associated_token_address: string;
+  price_info: PriceInfo; // Replace 'unknown' with a more specific type if known
+}
+
+interface PriceInfo {
+  price_per_token: number;
+  total_price: number;
+  currency: string;
+}
+
 // Define a TypeScript interface for the asset items
 interface AssetItem {
   interface: 'V1_NFT' | 'FungibleToken' | 'FungibleAsset';
@@ -20,7 +36,7 @@ interface AssetItem {
   supply: GenericObject | null; // Generic object or null
   mutable: boolean;
   burnt: boolean;
-  token_info?: GenericObject; // Optional generic object
+  token_info?: TokenInfo; // Optional generic object
   uses?: GenericObject; // Optional generic object
 }
 
@@ -56,10 +72,15 @@ export async function searchWallets(ownerAddress: string) {
         item.interface === 'FungibleToken' || item.interface === 'FungibleAsset'
     )
     .map((item: AssetItem) => ({
-      id: item.id,
+      token_info: {
+        symbol: item.token_info?.symbol,
+        balance: item.token_info?.balance,
+        price_per_token: item.token_info?.price_info?.price_per_token,
+        total_price: item.token_info?.price_info?.total_price,
+        currency: item.token_info?.price_info?.currency,
+      },
       interface: item.interface,
     }));
-
   console.log(assets);
   return assets;
 }
