@@ -60,6 +60,13 @@ const WalletShelf = (props: WalletShelfProps) => {
     values: [300, 50, 100],
   };
 
+  //   const realPieChartData = {
+  //     labels: assets()?.assets.map((a) => a.symbol) || [],
+  //     values: assets()?.assets.map((a) => a.price_info.total_price) || [],
+  //   };
+
+  //   console.log('Real Pie Chart Data:', realPieChartData);
+
   return (
     <div>
       <DogBot />
