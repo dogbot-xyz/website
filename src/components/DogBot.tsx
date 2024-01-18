@@ -4,10 +4,7 @@ export function DogBot() {
   return (
     <>
       <div>
-        <a
-          href="https://solana.fm/address/HexkqtFMmBJXUHco9KoXKocQcLSgfCf2Hdz1Qa3jcSEA/transactions?cluster=mainnet-alpha"
-          target="_blank"
-        >
+        <a href="https://github.com/dogbot-xyz/website" target="_blank">
           <img
             src={dogImage}
             class="logo solid"

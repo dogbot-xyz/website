@@ -30,40 +30,60 @@
 
 .logo.solid {
   width: 200px;
-  /* or whatever size you prefer */
   height: auto;
-  /* maintain aspect ratio */
 }
 
 body {
   background-color: black;
-  /* Set the background to black */
   color: white;
-  /* Set text color to white for better readability */
 }
-
 
 li button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px; /* Adjust size as needed */
+  font-size: 16px;
 }
 
 .wallet-title:hover {
   cursor: pointer;
-  /* Add your desired hover styles here, e.g., color change, text decoration, etc. */
-  color: #007bff; /* Example: Change color on hover */
+  color: #007bff;
   text-decoration: underline;
 }
 
-/* Adjust the layout to move everything towards the top */
 body, html {
   margin-top: 0;
   padding-top: 0;
 }
 
-/* If you have a specific container or wrapper, adjust its top margin/padding as well */
 .your-main-container-class {
-  margin-top: 0; /* Adjust as needed */
+  margin-top: 0;
+}
+
+.wallet-shelf, .wallet-data {
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white; /* Change border color to white for visibility */
+}
+
+th, td {
+  border: 1px solid white; /* Change border color to white */
+  padding: 8px;
+  text-align: left;
+  color: black; /* Set text color to black for contrast */
+  background-color: white; /* Set background color to white for visibility */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
 }

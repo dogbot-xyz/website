@@ -1,4 +1,4 @@
-import { Wallet } from '../App';
+import { Wallet } from './WalletShelf';
 
 interface WalletListProps {
   wallets: Wallet[];

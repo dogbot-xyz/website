@@ -30,15 +30,10 @@ For now we are auto deploying everything in main to staging.
 
 ### Tech Stack
 
-- [Node](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [tRPC](https://trpc.io/)
-- [SolidStart](https://start.solidjs.com/)
 - [SolidJS](https://www.solidjs.com/)
-- [Tailwind](https://tailwindcss.com/)
-- [DaisyUI Components](https://daisyui.com/)
 - [Vercel](https://vercel.com/)
-- [Helius-SDK](https://github.com/helius-labs/helius-sdk)
 - [Surrealdb-SDK](https://docs.surrealdb.com/docs/integration/sdks/javascript)
 
 ### Setup Environment
@@ -112,9 +107,7 @@ npm run build:env
 
 # Project Structure
 
-## Important Files & Folders
 
-## Project Structure Details
 
 ## Vercel Config
 
@@ -124,30 +117,4 @@ npm run build:env
 | Output Director | `TODO` |
 | Install Command | `TODO` |
 
-## Styles
 
-[TailwindCSS](https://tailwindcss.com/) is used for base utilies and [DaisyUI](https://daisyui.com/) contains helpful UI components.
-
-## Icons
-
-See list of available icons in `$lib/config`.
-
-### Use Icons
-
-```js
-<script>
-    import Icon from "$lib/components/icon.svelte";
-</script>
-
-<Icon id="paper-plane">
-```
-
-### Add Icons
-
-1. Find the icon you want on [IconMon](https://iconmonstr.com/). Most of these should render fine.
-2. Click "Embed" -> "Inline" and copy only the `<path>`.
-3. Add a new key to `$lib/config.ts` that is similar to the Icon Monsters name for the icon and add your `<path>`.
-
-## State Management
-
-- `TODO`
