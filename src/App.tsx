@@ -38,8 +38,15 @@ function WalletShelf(props: WalletShelfProps) {
     console.log('Searching for address:', address);
     try {
       const results = await searchWallets(address);
-      console.log('Search results:', results);
-      setAssets(results); // Store the results in the 'assets' signal
+      // Filter out assets with a total price below 10 and sort in descending order
+      const filteredAndSortedAssets = {
+        ...results,
+        assets: results.assets
+          .filter((asset) => asset.price_info?.total_price >= 10)
+          .sort((a, b) => b.price_info.total_price - a.price_info.total_price),
+      };
+      console.log('Search results:', filteredAndSortedAssets);
+      setAssets(filteredAndSortedAssets); // Store the filtered and sorted results
     } catch (error) {
       console.error('Error fetching assets', error);
       setAssets(null);
