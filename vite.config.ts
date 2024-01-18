@@ -1,11 +1,6 @@
-import { defineConfig } from 'vite'
-import solid from 'vite-plugin-solid'
-// import eslint from 'vite-plugin-eslint';
-
+import { defineConfig } from 'vite';
+import solid from 'vite-plugin-solid';
 
 export default defineConfig({
-  plugins: [
-    solid(),
-    // eslint()
-  ],
-})
+  plugins: [solid()],
+});
